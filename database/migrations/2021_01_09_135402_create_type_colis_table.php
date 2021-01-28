@@ -16,8 +16,7 @@ class CreateTypeColisTable extends Migration
         Schema::create('type_colis', function (Blueprint $table) {
             $table->id();
             $table->string("libelle");
-            $table->integer("prixUnitaire");
-            $table->float("poids");
+            $table->integer("PrixKilo");
             $table->timestamps();
         });
     }

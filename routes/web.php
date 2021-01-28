@@ -25,3 +25,4 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource("/annonce",\App\Http\Controllers\AnnoncesController::class)->middleware("auth");

@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-md navbar-light shadow-sm fixed-top" style="background-color: #ff5050;color: white">
             <div class="container">
                 <a class="navbar-brand text-light font-weight-bold" href="{{ url('/') }}">
-                    <h2 class="my-auto">ColiSmarT</h2>
+                    <h3 class="my-auto">ColiSmarT</h3>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -35,10 +35,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto ml-3 my-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-light font-weight-bold" href="{{ url('/home') }}">Envie d'enyoyer un colis</a>
+                            <a class="nav-link text-light font-weight-bold" href="{{ route('annonce.create') }}">Envoyer</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light font-weight-bold" href="{{ url('/home') }}">Envie de transporter un colis</a>
+                            <a class="nav-link text-light font-weight-bold" href="{{ url('/home') }}">Transporter</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light font-weight-bold" href="{{ url('/home') }}">Comment ça marche ?</a>
@@ -48,27 +48,27 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                           <div class="p-1 rounded-pill bg-dark">
+                        <li class="nav-item selection">
+                           <div>
                                <a class="nav-link text-light font-weight-bold" href="{{ url('/home') }}">{{ __(' Accueil') }}</a>
                            </div>
                         </li>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
+                                <li class="nav-item my-auto mx-2">
                                     <a class="nav-link text-light font-weight-bold" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
+                                <li class="nav-item my-auto">
                                     <a class="nav-link text-light font-weight-bold" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle font-weight-bold" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle font-weight-bold text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -90,7 +90,7 @@
             </div>
         </nav>
 
-        <main style="margin-top: 54.22px">
+        <main style="margin-top: 56.22px">
             @yield('content')
         </main>
     </div>

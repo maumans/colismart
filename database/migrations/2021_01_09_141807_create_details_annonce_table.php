@@ -17,6 +17,8 @@ class CreateDetailsAnnonceTable extends Migration
             $table->id();
             $table->integer("quantite");
             $table->float("prix");
+            $table->foreignId("annonce_id")->constrained("annonces");
+            $table->foreignId("type_colis_id")->constrained("type_colis");
             $table->timestamps();
         });
     }
