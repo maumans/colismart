@@ -100,9 +100,6 @@
                     </div>
                 </div>
             </div>
-
-            <example-component mau="maurice"></example-component>
-
            <div class="my-5 py-3" style="background-color: black">
                <div class="d-flex justify-content-around align-items-center h-100 text-light container">
                    <div class="text-center">
