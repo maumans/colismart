@@ -132,4 +132,8 @@
         </div>
     </div>
 
+    <div>
+        <example-component mau={{$typecolis}}></example-component>
+    </div>
+
 @endsection

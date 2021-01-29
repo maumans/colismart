@@ -37361,7 +37361,9 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
             _vm._v(
-              "\n                    " + _vm._s(_vm.mau) + "\n                "
+              "\n                    " +
+                _vm._s(typeof JSON.parse(_vm.mau)) +
+                "\n                "
             )
           ])
         ])
