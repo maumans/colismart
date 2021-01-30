@@ -12,18 +12,16 @@
                 <div class="modal-body">
                     <div class="d-flex justify-content-between">
                         <div class="mr-2">
-                            <label for="">Type colis</label>
-                            <select class="form-control col-" name="" id="">
-
-                                <option v-for="tpc in JSON.parse(typecolis)" >
+                            <label>Type colis</label>
+                            <select v-model="typecolisS" class="form-control col-" v-on:change="prixkilo=typecolisS.PrixKilo">
+                                <option v-bind:value="tpc" v-for="tpc in JSON.parse(typecolis)" >
                                     {{tpc.libelle}}
                                 </option>
-
                             </select>
                         </div>
                         <div class="">
                             <label for="">Prix par kilos</label>
-                            <input type="text" class="form-control col-6" size="" value="100" disabled>
+                            <input type="text" v-model="prixkilo" class="form-control col-6" size="" value="100" disabled>
                         </div>
                         <div class="">
                             <label for="">Poids</label>
@@ -42,25 +40,27 @@
 </template>
 
 <script>
-
-
+    import store from "./store";
 
     export default {
         props:["typecolis"],
         data(){
             return{
-                "typecolisD":"",
+                "typecolisS":"",
                 "prixkilo":"",
                 "poids":""
             }
-
         },
         mounted() {
-            console.log('Component mounted.')
+
         },
+        store:store,
         methods:{
             remplir(){
-                alert(this.poids)
+                let colis={"typecolis":this.typecolisS,"prixkilo":this.prixkilo,"poids":this.poids};
+                this.$store.commit("addColis",colis);
+                let montant=colis.prixkilo*colis.poids;
+                this.$store.commit("updateTotal",montant);
             }
         }
     }

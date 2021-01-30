@@ -6,7 +6,26 @@
             <div class="text-center mt-4">
                 <h2>TRANSPORTER UN COLIS</h2>
             </div>
-            <form action="">
+            <form action="{{route("annonce.store")}}" method="post">
+                @csrf
+                <div class="row my-5">
+                    <div class="col-6">
+                        <label for="">
+                            <span class="font-weight-bold">
+                                Adresse de depart
+                            </span>
+                        </label>
+                        <input name="adressedepart" type="search" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="">
+                            <span class="font-weight-bold">
+                                Adresse d'arrivée
+                            </span>
+                        </label>
+                        <input name="adressearrive" type="search" class="form-control">
+                    </div>
+                </div>
                 <div class="row my-5">
                     <div class="col-6">
                         <label for="">
@@ -14,7 +33,7 @@
                                 Date de depart
                             </span>
                         </label>
-                        <input type="date" class="form-control">
+                        <input name="datedepart" type="date" class="form-control">
                     </div>
                     <div class="col-6">
                         <label for="">
@@ -22,7 +41,7 @@
                                 Date d'arrivée
                             </span>
                         </label>
-                        <input type="date" class="form-control">
+                        <input name="datearrive" type="date" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-5">
@@ -37,7 +56,7 @@
                                     <option value="">+224</option>
                                 </select>
                             </span>
-                            <input type="tel" class="form-control">
+                            <input name="teltransporteur" type="tel" class="form-control">
                         </div>
                     </div>
                     <div class="col-6">
@@ -53,7 +72,7 @@
                                     <option value="">+224</option>
                                 </select>
                             </span>
-                            <input type="tel" class="form-control">
+                            <input name="telrecepteur" type="tel" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -82,6 +101,9 @@
                         </div>
                     </div>
                 </div>
+
+                <colis-table-component></colis-table-component>
+
                 <div class="d-flex mb-5">
                     <button type="submit" class="btn btn-success mr-5">
                         Enregistrer
@@ -90,8 +112,6 @@
                         Annuler
                     </button>
                 </div>
-
-                <colis-table-component></colis-table-component>
             </form>
         </div>
     </div>

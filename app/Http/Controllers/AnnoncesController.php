@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TypeColis;
 use Illuminate\Http\Request;
+use Psy\Util\Json;
 
 class AnnoncesController extends Controller
 {
@@ -36,7 +37,7 @@ class AnnoncesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       dd($request->typecolis);
     }
 
     /**
